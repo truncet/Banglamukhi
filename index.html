@@ -1,0 +1,341 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<style>
+
+
+body{
+
+background: url("banglamukhi/back.jpg");
+background:#dee9e9;
+}
+
+#header{
+	padding: 10px;
+	/*background:#edf7f7;*/
+	height:100%;
+	width: auto;
+	line-height: 1px;
+	color: black;
+	font-family: georgia;
+	font-size: 30px;
+	display:flex;
+	flex-direction: column;
+	justify-content:center;
+	align-items:center;
+	text-align:center;
+	
+}
+
+#header p{
+font-family: Courier New;
+font-size: 30px;
+color:brown;
+
+}
+
+
+
+.icon{
+color: black;
+font-size: 40px;
+
+
+}
+
+#furniture{
+display: grid;
+grid-template-columns: 15% 85%;
+hieght: 100%;
+}
+
+
+#list{
+display: flex;
+grid-column-start: 1;
+grid-column-end: 2;
+height:70%
+width: 100%;
+flex-direction: column;
+justify-content:left;
+font-size: 20px;
+font-color: black;
+
+}
+
+
+#gallery{
+grid-column-start: 2;
+grid-column-end: 3;
+background: white;
+height: 500px;
+margin-left: 80px;
+margin-right:100px;
+
+}
+
+#imagebox{
+display: flex;
+flex-direction:row;
+justify-content:center;
+align-items:center;
+
+}
+
+#imagebox div{
+margin: 30px;
+
+}
+
+.image_info{
+margin-bottom: 10px;
+margin-left: 80px;
+color: blue;
+font-size: 20px;
+text-align:left;
+
+}
+
+
+
+form{
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: center;
+height: 50%;
+}
+
+.input-field{
+height:35px;
+width:300px;
+padding:10px;
+margin:5px;
+border:3px;
+border-radius: 10px;
+
+
+}
+
+.btn{
+padding: 0 20px;
+  height: 30px;
+  font-size: 1em;
+  font-weight: 400;
+  text-transform: uppercase;
+  border: 1px black solid;
+  border-radius: 2px;
+  background: transparent;
+  cursor: pointer;
+  background-color: #f1c40f;
+
+}
+
+
+.btn2{
+  padding: 0 20px;
+  height: 30px;
+  font-size: 1em;
+  text-transform: uppercase;
+  border: 1px black solid;
+  border-radius: 5px;
+  background: transparent;
+  cursor: pointer;
+  background-color: #bbe0e0;
+  margin-bottom: 10px;
+}
+
+footer{
+height: 22%;
+background: #618685;
+line-height: 5px;
+}
+
+#contact{
+width: 700px;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+}
+</style>
+</head>
+
+
+<body>
+
+<div id="header"> 
+
+<h1> Banglamukhi <span style="color: red; font-family: verdana">furnitures<span> </h1>
+<p style="color:orange"> <i class= "icon far fa-bell"></i> Now online </p>
+<!--
+<p> quality with affordability </p>
+-->
+
+</div>
+
+
+
+<div id ="furniture">
+
+<ul id= "list" style="list-style:none;">
+
+<li class="btn2">  <label class="animated bounce">Sofa</label></li>
+<li class="btn2">  <label>Bed</label></li>
+<li class="btn2">  <label>Kitchen </label></li>
+<li class="btn2">  <label>chair</label></li>
+<li class="btn2">  <label>cupboard</label></li>
+
+</ul>
+
+<div id="gallery">
+
+
+</div>
+</div>
+<form id="form_contact" action="" method="POST"> 
+<p style="font-family:calibri; font-size:25px; text-align:left;"> We will send you the details of the products you are interested in....</p>
+
+<h3>Your email: <input id="unique_email" type="email" class="input-field" placeholder="Enter your Email" > 
+</h3>
+<h3> 
+
+ Mobile-no: <input type="number" id="number" class="input-field" placeholder="mobile number" > </h3>
+<input type="submit" onclick="myFunction()" class="btn"></input>
+
+
+</form>
+
+<footer>
+ 
+<div style="font-size:20px">
+<p style="float:right">Find Us on <a target="_blank" href="https://www.google.com.np/maps/place/Banglamukhi+Temple/">Google Map</a> </p>
+<section id ="contact">
+<p> <i class="icon fas fa-phone-volume"></i> Contact : +977-....... ,  01-........          </p>
+<p>Email:  ...@gmail.com </p>
+</section>
+<p style="text-align:left;"> <center> We are also on <a target="_blank" href ="#"> Daraj.com </a> ,<a target="_blank" href="#"> hamro bazar </a> !! <center> </p>
+</div>
+<p>  Made by- <a  target ="_blank" href ="https://twitter.com/LomashBhattarai"> @lomashbhattarai </a>  </p>
+
+</footer>
+
+
+<script type="text/babel">
+	
+	const images_sofa = [ "fur1.jpg","fur2.jpeg"]
+	
+	function Arrow1(props){
+	return (
+		<div onClick={props.onLeftClick}>
+			<i  className="icon fas fa-caret-left"></i>
+		</div>)
+	}
+	
+	function Arrow2(props){
+	return (
+		<div onClick={props.onRightClick}>
+			<i  className="icon fas fa-caret-right"></i>
+
+		</div>)
+	
+	}
+	
+	function Image(props){
+	return (
+		<div>
+			<img src={props.img_src}></img> 
+		</div>)
+	
+	}
+	
+	function Imagebox(props){
+	return (
+		<div id="imagebox">
+			<Arrow1 onLeftClick={props.onLeftClick} />
+			<Image img_src={props.img_src} />
+			<Arrow2 onRightClick={props.onRightClick} />
+			
+		</div>)
+	
+	}
+	
+	function Detail(){
+	return <div className="image_info">Detail:</div>
+	
+	}
+	function Price(){
+	return <div className="image_info">Price:</div>
+	
+	}
+	
+	function Interest(){
+	return (
+		<div className="image_info">
+			<input type="checkbox" />
+			<label> Interested </label>
+		</div>
+	)
+	
+	}
+	
+	class Container_box extends React.Component{
+		constructor(props){
+			super(props);
+			this.state ={
+			value : 0
+			};
+			
+			this.handleRightClick = this.handleRightClick.bind(this)
+			this.handleLeftClick = this.handleLeftClick.bind(this)
+		}
+		
+		handleRightClick(){
+			this.setState ({
+				value : this.state.value + 1		
+			})
+		}
+		
+		handleLeftClick(){ 
+		this.setState ({
+				value : this.state.value - 1		
+			})
+		}
+
+		
+		
+		
+	
+	render(){
+		
+		
+		return( 
+		<div> 
+			
+			<Imagebox onLeftClick={this.handleLeftClick} onRightClick={this.handleRightClick} img_src= {images_sofa[this.state.value]}   />
+			<Detail />
+			<Price />
+			<Interest />
+	
+		</div>
+		
+		)
+	
+	}
+}
+	
+	
+	ReactDOM.render(
+	<Container_box />,
+	document.getElementById('gallery')
+	)
+ 
+
+</script>
+
+</body>
+
+</html>
