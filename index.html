@@ -226,7 +226,7 @@ align-items: center;
 
 <script type="text/babel">
 	
-	const images_sofa = [ "fur1.jpg","fur2.jpeg"]
+	const images_sofa = [ ["fur1.jpg","Sofa","5000"],["fur2.jpeg","Bed","10000"]]
 	
 	function Arrow1(props){
 	return (
@@ -263,12 +263,12 @@ align-items: center;
 	
 	}
 	
-	function Detail(){
-	return <div className="image_info">Detail:</div>
+	function Detail(props){
+	return <div className="image_info">Detail:{props.info}</div>
 	
 	}
-	function Price(){
-	return <div className="image_info">Price:</div>
+	function Price(props){
+	return <div className="image_info">Price: Rs. {props.price}</div>
 	
 	}
 	
@@ -315,9 +315,9 @@ align-items: center;
 		return( 
 		<div> 
 			
-			<Imagebox onLeftClick={this.handleLeftClick} onRightClick={this.handleRightClick} img_src= {images_sofa[this.state.value]}   />
-			<Detail />
-			<Price />
+			<Imagebox onLeftClick={this.handleLeftClick} onRightClick={this.handleRightClick} img_src= {images_sofa[this.state.value][0]}   />
+			<Detail info ={images_sofa[this.state.value][1]} />
+			<Price price={images_sofa[this.state.value][2]}/>
 			<Interest />
 	
 		</div>
